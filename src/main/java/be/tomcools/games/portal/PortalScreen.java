@@ -10,8 +10,7 @@ import javafx.scene.input.KeyCode;
 
 public class PortalScreen extends Screen {
     public static final Vector2 GRAVITY = new Vector2(0, 0.2f);
-
-    private Floor floor;
+    private final Floor floor;
     private Cube cc;
     public PortalScreen(Game game) {
         super(game);
@@ -36,7 +35,7 @@ public class PortalScreen extends Screen {
         if(cc.collidesWith(floor)) {
             cc.setVelocity(Vector2.zero());
         } else {
-            cc.applyForce(Vector2.mult(GRAVITY,cc.getMass()));
+             cc.applyForce(Vector2.mult(GRAVITY,cc.getMass()));
         }
     }
 

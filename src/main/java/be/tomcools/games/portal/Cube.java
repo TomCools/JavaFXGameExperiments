@@ -16,7 +16,7 @@ public class Cube extends DrawableItem implements Collisionable {
 
     public Cube(Vector2 location, float weight) {
         super(location, weight);
-        image = new JavaFxImage(new File("c:cube.png").toURI().toString());
+        image = new JavaFxImage(new File("d:/resource/cube.png").toURI().toString());
     }
 
     public int getHeight() {
