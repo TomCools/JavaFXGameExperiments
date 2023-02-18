@@ -16,7 +16,8 @@ public class Cube extends DrawableItem implements Collisionable {
 
     public Cube(Vector2 location, float weight) {
         super(location, weight);
-        image = new JavaFxImage(new File("d:/resource/cube.png").toURI().toString());
+
+        image = new JavaFxImage(getClass().getClassLoader().getResourceAsStream("images/cube.png"));
     }
 
     public int getHeight() {
@@ -30,6 +31,6 @@ public class Cube extends DrawableItem implements Collisionable {
 
     @Override
     public Collection<BoundingBox> hitBoxes() {
-        return Collections.singleton(new BoundingBox(location.getX(), location.getY(), image.getWidth(), image.getWidth()));
+        return Collections.singleton(new BoundingBox(location.getX(), location.getY(), image.getWidth(), image.getHeight()));
     }
 }
